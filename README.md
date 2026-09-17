@@ -3,7 +3,7 @@
 Interfaz web en React para la plataforma de gestión de tickets de soporte
 (prueba técnica Tech Lead Full Stack JavaScript). Este README cubre solo el
 frontend; para el backend ver
-[`https://github.com/edyson10/Backend-Tickets`](../backend/README.md).
+[`../backend/README.md`](https://github.com/edyson10/Backend-Tickets).
 
 > **Despliegue**: este frontend se ejecuta con `npm` (dev o build estático)
 > y está pensado para desplegarse en **Vercel**, apuntando por
