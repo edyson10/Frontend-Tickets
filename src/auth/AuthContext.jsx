@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
         return
       }
       try {
-        const freshUser = await authApi.me(storedUser)
+        const freshUser = await authApi.me()
         if (!cancelled) setUser(freshUser)
       } catch {
         if (!cancelled) {

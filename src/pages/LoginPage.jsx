@@ -3,13 +3,6 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/useAuth.js'
 import { Button } from '../components/ui/Button.jsx'
 import { ErrorState } from '../components/ui/EmptyState.jsx'
-import { USE_MOCK } from '../api/config.js'
-
-const DEMO_USERS = [
-  { email: 'admin@demo.com', label: 'Administrador' },
-  { email: 'supervisor@demo.com', label: 'Supervisor' },
-  { email: 'agente1@demo.com', label: 'Agente de soporte' },
-]
 
 export default function LoginPage() {
   const { login, isAuthenticated } = useAuth()
@@ -43,12 +36,6 @@ export default function LoginPage() {
     } finally {
       setLoading(false)
     }
-  }
-
-  function fillDemo(demoEmail) {
-    setEmail(demoEmail)
-    setPassword('Password123!')
-    setError('')
   }
 
   return (
@@ -96,25 +83,6 @@ export default function LoginPage() {
             {loading ? 'Ingresando...' : 'Iniciar sesion'}
           </Button>
         </form>
-
-        {USE_MOCK && (
-          <div className="mt-6 rounded-lg bg-slate-50 p-4 text-xs text-slate-500">
-            <p className="mb-2 font-semibold text-slate-600">Modo demo (datos mock)</p>
-            <p className="mb-2">Contrasena para todos: <code className="rounded bg-slate-200 px-1 py-0.5">Password123!</code></p>
-            <div className="flex flex-wrap gap-2">
-              {DEMO_USERS.map((demo) => (
-                <button
-                  key={demo.email}
-                  type="button"
-                  onClick={() => fillDemo(demo.email)}
-                  className="rounded-full border border-slate-300 bg-white px-3 py-1 font-medium text-slate-600 hover:border-brand-400 hover:text-brand-600"
-                >
-                  {demo.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   )
